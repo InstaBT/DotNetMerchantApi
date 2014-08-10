@@ -1,8 +1,5 @@
-DotNetMerchantApi
-=================
-
-This is a .NET client for the Merchant Payments API
-
+InstaBT Payments .NET API
+=========================
 
 Sample code.
 
