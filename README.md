@@ -1,7 +1,7 @@
 InstaBT Payments .NET API
 =========================
 
-Sample code.
+Below is a snippet sample of how to implement the InstaBT Payments API in .NET
 
 ```CSharp
 
