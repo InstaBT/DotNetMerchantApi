@@ -5,8 +5,7 @@ open System.Runtime.Serialization
 
 
 [<DataContract>]
-type MerchantOrder =
-  { 
+type MerchantOrder = { 
   [<field: DataMember(Name = "id")>]
   id   : Guid;
   [<field: DataMember(Name = "total")>]
@@ -15,8 +14,6 @@ type MerchantOrder =
   currency       : string;
   [<field: DataMember(Name = "btc_required")>]
   btc_required    : decimal;
-  [<field: DataMember(Name = "btc_current")>]
-  btc_current    : decimal;
   [<field: DataMember(Name = "btc_address")>]
   btc_address     : string;
   [<field: DataMember(Name = "data")>]
