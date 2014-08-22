@@ -10,7 +10,10 @@ var client = new InstaBT.Api.Merchant("https://api.instabt.com"
   , "ENTER_YOUR_API_KEY_HERE"
   , "ENTER_YOUR_API_SECRET_HERE");
 
-var order = client.CreateOrder(invoice.Amount,"CAD"); 
+var order = client.CreateOrder(invoice.Amount,"CAD");
+
+order.Data = invoice.Id;
+order.Ttl  = 30; // minutes
 
 RedirectToUrl(order.url);
 
