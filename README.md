@@ -10,7 +10,6 @@ var client = new InstaBT.Api.Merchant("https://api.instabt.com"
   , "ENTER_YOUR_API_KEY_HERE"
   , "ENTER_YOUR_API_SECRET_HERE");
   
-  
 client.Data = invoice.Id;
 client.Ttl  = 30; // minutes
 
