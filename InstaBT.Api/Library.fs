@@ -23,10 +23,8 @@ type Merchant(url : string, api_key : string, api_secret : string ) =
   let mutable url_success = ""
   let mutable url_failure = ""
 
-  member this.CreateOrder(amount : decimal, currency : string ) = 
-
-   let bytes = 
-     call config "/create_order" 
+  let call_endpoint (amount : decimal) (currency : string) =
+    call config "/create_order" 
        [| ("amount", amount.ToString())
         ; ("currency", currency)
         ; ("data", data) 
@@ -36,14 +34,14 @@ type Merchant(url : string, api_key : string, api_secret : string ) =
         ; ("url_success", url_success) 
         ; ("url_failure", url_failure) |]
 
-   let str = Encoding.UTF8.GetString bytes
+  member this.CreateOrder(amount : decimal, currency : string ) = 
 
+   let str = this.CreateOrderString(amount, currency)
    JsonConvert.DeserializeObject<Model.MerchantOrder> str
 
   member this.CreateOrderString(amount : decimal, currency : string ) = 
 
-   let bytes = call config "/create_order" [| ("amount", amount.ToString()); ("currency", currency)|]
-
+   let bytes = call_endpoint amount currency
    Encoding.UTF8.GetString bytes
 
   member x.Data with get() = data and set(v) = data <- v
