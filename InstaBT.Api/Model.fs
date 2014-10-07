@@ -12,7 +12,6 @@ type MerchantOrder() =
   let mutable total    : decimal = 0.00M
   let mutable currency       : string = "btc"
   let mutable btc_required    : decimal = 0.00M
-  let mutable btc_address     : string = ""
   let mutable data  : string  = ""
   let mutable created_on    : DateTime = DateTime.UtcNow
   let mutable expires_on    : DateTime = DateTime.UtcNow
@@ -31,9 +30,6 @@ type MerchantOrder() =
   
   [<JsonProperty("BtcRequired")>]
   member x.BtcRequired with get() = btc_required and set(v) = btc_required <- v
-  
-  [<JsonProperty("BtcAddress")>]
-  member x.BtcAddress with get() = btc_address and set(v) = btc_address <- v
 
   [<JsonProperty("Data")>]
   member x.Data with get() = data and set(v) = data <- v
