@@ -8,7 +8,7 @@ open Newtonsoft.Json
 [<DataContract>]
 type MerchantOrder() = 
 
-  let mutable id : Guid = Guid.Empty
+  let mutable id : string = ""
   let mutable total    : decimal = 0.00M
   let mutable currency       : string = "btc"
   let mutable btc_required    : decimal = 0.00M
